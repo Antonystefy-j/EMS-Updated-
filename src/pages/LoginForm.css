@@ -1,0 +1,116 @@
+/* Full screen container */
+.login-page {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Left side - can add image or color */
+.login-left {
+  flex: 1;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+.login-left h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.login-left p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Right side - login form */
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+/* Card */
+.login-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Inputs */
+.login-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-form input:focus {
+  border-color: #4b6cb7;
+  outline: none;
+}
+
+/* Button */
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background: #4b6cb7;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-form button:hover {
+  background: #182848;
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #e61616;
+}
+
+.login-footer a {
+  color: #97b0eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-left {
+    height: 200px;
+    padding: 20px;
+  }
+
+  .login-right {
+    flex: unset;
+    height: calc(100vh - 200px);
+  }
+}

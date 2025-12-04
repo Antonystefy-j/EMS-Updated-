@@ -1,0 +1,6 @@
+.page-container {
+  margin-left: 220px; /* Same width as Sidebar */
+  padding: 20px;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
