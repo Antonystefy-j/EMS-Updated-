@@ -15,33 +15,32 @@ export default function LoginForm() {
     e.preventDefault();
 
     if (email.trim() === validEmail && password.trim() === validPassword) {
-      navigate("/dashboard"); // go to dashboard
+      navigate("/dashboard");
     } else {
       alert("Invalid email or password");
     }
   };
 
-  // Handle forgot password
   const handleForgotPassword = (e) => {
     e.preventDefault();
     if (!email) {
       alert("Please enter your email first to reset password.");
       return;
     }
-    // You can later replace this with real API call to send reset link
     alert(`Password reset link has been sent to ${email}`);
   };
 
   return (
-    <div className="login-page">
-      <div className="login-left">
+    <div className="login-page fade-in">
+      <div className="login-left slide-left">
         <h1>Welcome Back!</h1>
         <p>Manage your employees efficiently with EMS</p>
       </div>
 
-      <div className="login-right">
-        <div className="login-card">
+      <div className="login-right slide-right">
+        <div className="login-card pop-in">
           <h2>Login</h2>
+
           <form onSubmit={handleLogin} className="login-form">
             <input
               type="email"
@@ -49,16 +48,23 @@ export default function LoginForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="input-animate"
             />
+
             <input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="input-animate"
             />
-            <button type="submit">Login</button>
+
+            <button type="submit" className="btn-animate">
+              Login
+            </button>
           </form>
+
           <p className="login-footer">
             Forgot password?{" "}
             <a href="#" onClick={handleForgotPassword}>

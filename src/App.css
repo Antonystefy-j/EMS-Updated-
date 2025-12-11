@@ -308,3 +308,106 @@ html, body, #root {
 .add-btn:hover {
   background: #0044d0;
 }
+.dashboard-page {
+  padding: 40px;
+  animation: fadeIn 1s ease;
+}
+
+.dashboard-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.dashboard-card {
+  background: white;
+  width: 250px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-8px);
+}
+
+.card-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.logout-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Logout button */
+.logout-btn {
+  padding: 10px 24px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+  transform: translateY(-3px);
+}
+
+/* Fade animations */
+.fade-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFade 0.8s forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.dashboard-card {
+  opacity: 0;
+  transform: scale(0.85);
+  animation: cardPop 0.6s ease forwards;
+}
+
+.dashboard-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.dashboard-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.dashboard-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes cardPop {
+  0% { opacity: 0; transform: scale(0.85); }
+  60% { transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}

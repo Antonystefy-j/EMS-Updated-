@@ -4,9 +4,18 @@
   width: 100vw;
   height: 100vh;
   font-family: "Poppins", sans-serif;
+
+  /* Fade animation */
+  opacity: 0;
+  animation: pageFade 0.8s ease forwards;
 }
 
-/* Left side - can add image or color */
+@keyframes pageFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* LEFT SIDE */
 .login-left {
   flex: 1;
   background: linear-gradient(135deg, #4b6cb7, #182848);
@@ -17,6 +26,18 @@
   align-items: center;
   padding: 40px;
   text-align: center;
+
+  /* Slide in effect */
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: leftSlide 1s ease forwards;
+}
+
+@keyframes leftSlide {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .login-left h1 {
@@ -29,16 +50,29 @@
   line-height: 1.5;
 }
 
-/* Right side - login form */
+/* RIGHT SIDE */
 .login-right {
   flex: 1;
+  background: #f5f5f5;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f5f5;
+
+  /* Smooth slide */
+  transform: translateX(50px);
+  opacity: 0;
+  animation: rightSlide 1s ease forwards;
 }
 
-/* Card */
+@keyframes rightSlide {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* LOGIN CARD */
 .login-card {
   background: #fff;
   padding: 40px 30px;
@@ -47,9 +81,22 @@
   max-width: 400px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   text-align: center;
+
+  /* Card pop animation */
+  transform: scale(0.9);
+  opacity: 0;
+  animation: popIn 0.8s ease forwards;
+  animation-delay: 0.4s;
 }
 
-/* Inputs */
+@keyframes popIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* INPUTS */
 .login-form input {
   width: 100%;
   padding: 12px 15px;
@@ -57,14 +104,15 @@
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 16px;
+  transition: 0.3s ease;
 }
 
 .login-form input:focus {
   border-color: #4b6cb7;
-  outline: none;
+  transform: scale(1.03);
 }
 
-/* Button */
+/* BUTTON */
 .login-form button {
   width: 100%;
   padding: 12px;
@@ -74,22 +122,23 @@
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .login-form button:hover {
   background: #182848;
+  transform: translateY(-3px);
 }
 
-/* Footer */
+/* FOOTER */
 .login-footer {
   margin-top: 15px;
   font-size: 14px;
-  color: #e61616;
+  color: #182848;
 }
 
 .login-footer a {
-  color: #97b0eb;
+  color: #4b6cb7;
   text-decoration: none;
   font-weight: 500;
 }
@@ -98,7 +147,7 @@
   text-decoration: underline;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .login-page {
     flex-direction: column;
@@ -110,7 +159,6 @@
   }
 
   .login-right {
-    flex: unset;
     height: calc(100vh - 200px);
   }
 }

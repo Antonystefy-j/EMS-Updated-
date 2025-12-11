@@ -8,51 +8,44 @@ export default function Dashboard({ employees = [], departments = [] }) {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userEmail");
-    navigate("/"); // redirect to login page
+    navigate("/"); // redirect to login
   };
 
   return (
-    <div className="page-container">
-      <h1>Dashboard</h1>
+    <div className="dashboard-page">
 
-      <div className="cards-container">
-        <div className="card">
+      <h1 className="dashboard-title">Dashboard</h1>
+
+      {/* Cards */}
+      <div className="dashboard-cards">
+
+        <div className="dashboard-card fade-card">
           <span className="card-icon">📊</span>
-          <h2 className="card-title">Total Employees</h2>
-          <p className="card-value">{employees.length}</p>
+          <h2>Total Employees</h2>
+          <p>{employees.length}</p>
         </div>
 
-        <div className="card">
+        <div className="dashboard-card fade-card delay-1">
           <span className="card-icon">👥</span>
-          <h2 className="card-title">Active Employees</h2>
-          <p className="card-value">{employees.length}</p>
+          <h2>Active Employees</h2>
+          <p>{employees.length}</p>
         </div>
 
-        <div className="card">
+        <div className="dashboard-card fade-card delay-2">
           <span className="card-icon">🏢</span>
-          <h2 className="card-title">Departments</h2>
-          <p className="card-value">{departments.length}</p>
+          <h2>Departments</h2>
+          <p>{departments.length}</p>
         </div>
+
       </div>
 
-      {/* Logout button below cards */}
-      <div style={{ marginTop: "30px", textAlign: "center" }}>
-        <button
-          onClick={handleLogout}
-          style={{
-            padding: "10px 24px",
-            backgroundColor: "#f44336",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-            fontSize: "16px",
-            fontWeight: "bold",
-          }}
-        >
+      {/* Logout */}
+      <div className="logout-container">
+        <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>
       </div>
+
     </div>
   );
 }
